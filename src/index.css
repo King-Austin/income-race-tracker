@@ -1,0 +1,73 @@
+:root {
+  --bg: #F5F1EB;
+  --bg-page: #F5F1EB;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --green: #1B5E3B;
+  --green-dim: rgba(27, 94, 59, 0.1);
+  --amber: #D4A853;
+  --amber-dim: rgba(212, 168, 83, 0.15);
+  --text-primary: #1A1A17;
+  --text-secondary: #5C5E57;
+  --text-tertiary: #8E9187;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-mid: rgba(0, 0, 0, 0.12);
+  --border-high: rgba(0, 0, 0, 0.18);
+  --font-serif: 'Inter', sans-serif;
+  --font-mono: 'Inter', sans-serif;
+  --radius: 20px;
+  --radius-sm: 10px;
+  --app-width: 390px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--app-width);
+  height: 100%;
+  background: var(--bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 0; }
+
+button {
+  font-family: var(--font-mono);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-mono);
+  outline: none;
+}
+
+a { text-decoration: none; color: inherit; }
