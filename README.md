@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Income Chase Buddy (Income Race Tracker)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, real-time group income tracking and savings web application where users create/join "races" (monthly challenges), log income, and compete on a real-time leaderboard.
 
-Currently, two official plugins are available:
+Built by **King Austin** ([nworahebuka.nworahsoft.codes](https://nworahebuka.nworahsoft.codes)).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Key Features
 
-## React Compiler
+- **Real-Time Leaderboard**: Compete with friends or team members to hit monthly income goals.
+- **Race Creation**: Easily create public/private races with customized target amounts and shareable invite codes.
+- **Income Logging**: Log income details in NGN (Naira) or USD (with automatic conversion).
+- **Personal Dashboard**: Track your personal monthly goals, progress percentage, and recent activities.
+- **Global Feed**: View dynamic activity feeds of actions and logs across all race members.
+- **Responsive Web App**: Optimized for mobile and desktop screens.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React, Vite, TypeScript
+- **Backend/Database**: Supabase (Auth, Real-time PostgreSQL, Storage for profile avatars)
+- **Styling**: Pure CSS custom variables
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone & Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Configure Environment Variables**:
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Run Dev Server**:
+   ```bash
+   npm run dev
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. **Production Build**:
+   ```bash
+   npm run build
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Created and maintained by King Austin.*

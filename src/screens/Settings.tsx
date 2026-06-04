@@ -218,6 +218,25 @@ export default function Settings() {
         </button>
       </div>
 
+      {/* Credit footer */}
+      <div style={{
+        marginTop: 32,
+        textAlign: 'center',
+        fontSize: 11,
+        color: 'var(--text-tertiary)',
+        fontWeight: 500,
+      }}>
+        Built with ♥ by{' '}
+        <a 
+          href="https://nworahebuka.nworahsoft.codes" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{ color: 'var(--green)', textDecoration: 'underline', fontWeight: 600 }}
+        >
+          King Austin
+        </a>
+      </div>
+
       <BottomNav />
     </div>
   )

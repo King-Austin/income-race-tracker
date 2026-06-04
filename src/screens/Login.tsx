@@ -137,6 +137,25 @@ export default function Login() {
       >
         {mode === 'signin' ? "Don't have an account? Sign up" : 'Already have an account? Sign in'}
       </button>
+
+      {/* Credit footer */}
+      <div style={{
+        marginTop: 48,
+        textAlign: 'center',
+        fontSize: 11,
+        color: 'rgba(255, 255, 255, 0.7)',
+        fontWeight: 500,
+      }}>
+        Built with ♥ by{' '}
+        <a 
+          href="https://nworahebuka.nworahsoft.codes" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          style={{ color: '#D4A853', textDecoration: 'underline', fontWeight: 700 }}
+        >
+          King Austin
+        </a>
+      </div>
     </div>
   )
 }
