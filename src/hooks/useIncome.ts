@@ -40,5 +40,25 @@ export function useIncome(userId?: string) {
       .reduce((sum, r) => sum + r.amount, 0)
   }
 
-  return { records, loading, addRecord, monthTotal, reload: load }
+  const updateRecord = async (id: string, amount: number, description?: string, recordedAt?: string) => {
+    if (!userId) throw new Error('Not authenticated')
+    const res = await supabase.from('income_records').update({
+      amount,
+      description: description ?? null,
+      ...(recordedAt ? { recorded_at: new Date(recordedAt).toISOString() } : {})
+    } as any).eq('id', id).select().single()
+    if (res.error) throw new Error(res.error.message)
+    const data = res.data as IncomeRecord
+    setRecords(r => r.map(x => x.id === id ? data : x))
+    return data
+  }
+
+  const deleteRecord = async (id: string) => {
+    if (!userId) throw new Error('Not authenticated')
+    const res = await supabase.from('income_records').delete().eq('id', id)
+    if (res.error) throw new Error(res.error.message)
+    setRecords(r => r.filter(x => x.id !== id))
+  }
+
+  return { records, loading, addRecord, updateRecord, deleteRecord, monthTotal, reload: load }
 }

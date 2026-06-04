@@ -254,6 +254,15 @@ DO $$ BEGIN
 END $$;
 
 DO $$ BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'income_records: self update' AND tablename = 'income_records') THEN
+    CREATE POLICY "income_records: self update"
+      ON income_records FOR UPDATE
+      USING (auth.uid() = user_id)
+      WITH CHECK (auth.uid() = user_id);
+  END IF;
+END $$;
+
+DO $$ BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE policyname = 'income_records: self delete' AND tablename = 'income_records') THEN
     CREATE POLICY "income_records: self delete"
       ON income_records FOR DELETE

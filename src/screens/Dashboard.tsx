@@ -19,7 +19,7 @@ export default function Dashboard() {
   const navigate = useNavigate()
   const { userId } = useAuth()
   const { profile } = useProfile(userId)
-  const { records, monthTotal } = useIncome(userId)
+  const { records, monthTotal, reload } = useIncome(userId)
   const { races } = useRaces(userId)
   const [selectedRecord, setSelectedRecord] = useState<any>(null)
 
@@ -210,6 +210,7 @@ export default function Dashboard() {
         <IncomeDetailModal 
           record={selectedRecord}
           onClose={() => setSelectedRecord(null)}
+          onUpdate={reload}
         />
       )}
     </div>

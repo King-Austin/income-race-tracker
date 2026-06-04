@@ -21,7 +21,7 @@ function timeAgo(dateStr: string) {
 export default function FeedScreen() {
   const { userId } = useAuth()
   const { profile } = useProfile(userId)
-  const { records, loading } = useIncome(userId)
+  const { records, loading, reload } = useIncome(userId)
   const [selectedRecord, setSelectedRecord] = useState<any>(null)
 
   const displayName = userId ? (localStorage.getItem(`displayName_${userId}`) || profile?.username || 'You') : 'You'
@@ -104,6 +104,7 @@ export default function FeedScreen() {
         <IncomeDetailModal 
           record={selectedRecord}
           onClose={() => setSelectedRecord(null)}
+          onUpdate={reload}
         />
       )}
     </div>

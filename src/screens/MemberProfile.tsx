@@ -15,7 +15,7 @@ export default function MemberProfile() {
   const [loading, setLoading] = useState(true)
   const [selectedRecord, setSelectedRecord] = useState<any>(null)
 
-  useEffect(() => {
+  const fetchData = () => {
     if (!userId) return
     Promise.all([
       supabase.from('profiles').select('*').eq('id', userId).single(),
@@ -25,6 +25,10 @@ export default function MemberProfile() {
       setRecords((rRes.data as IncomeRecord[] | null) ?? [])
       setLoading(false)
     })
+  }
+
+  useEffect(() => {
+    fetchData()
   }, [userId])
 
   if (loading) {
@@ -178,6 +182,7 @@ export default function MemberProfile() {
         <IncomeDetailModal 
           record={selectedRecord} 
           onClose={() => setSelectedRecord(null)} 
+          onUpdate={fetchData}
         />
       )}
     </div>
