@@ -1,8 +1,0 @@
-{
-  "enableAllProjectMcpServers": true,
-  "env": {
-    "VITE_SUPABASE_URL": "https://hhaccmbgciaaqhcffzmh.supabase.co",
-    "VITE_SUPABASE_ANON_KEY": "sb_publishable_B6iZ6QI0yHju5JMwBXXaqQ_vZ5IpoL7",
-    "VITE_SUPABASE_PROJECT_ID": "hhaccmbgciaaqhcffzmh"
-  }
-}
