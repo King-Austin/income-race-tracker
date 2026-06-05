@@ -13,6 +13,11 @@ Built by **King Austin** ([nworahebuka.nworahsoft.codes](https://nworahebuka.nwo
 - **Global Feed**: View dynamic activity feeds of actions and logs across all race members.
 - **Responsive Web App**: Optimized for mobile and desktop screens.
 
+<img width="496" height="689" alt="image" src="https://github.com/user-attachments/assets/6acf88bd-00d9-43fa-be10-1e06bfa32303" />
+<img width="495" height="368" alt="image" src="https://github.com/user-attachments/assets/f7da833e-d489-4890-be1c-b7e58b4b11ab" />
+
+
+
 ## Technology Stack
 
 - **Frontend**: React, Vite, TypeScript
@@ -32,6 +37,7 @@ Built by **King Austin** ([nworahebuka.nworahsoft.codes](https://nworahebuka.nwo
    VITE_SUPABASE_URL=your_supabase_project_url
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
+
 
 3. **Run Dev Server**:
    ```bash
